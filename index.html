@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head><meta name=viewport content=width=device-width />
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "zero") {
+        if (localStorage.inccount) {
+            localStorage.inccount = Number(localStorage.inccount)+10;
+        } else {
+            localStorage.inccount = 0;
+        }
+        document.getElementById("inc").innerHTML = "$ " + localStorage.inccount + " ";
+    } else {
+        document.getElementById("inc").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function clickCounterDWN() {
+    if(typeof(Storage) !== "zero") {
+        if (localStorage.inccount) {
+            localStorage.inccount = Number(localStorage.inccount)-1;
+        } else {
+            localStorage.inccount = 0;
+        }
+        document.getElementById("inc").innerHTML = "$ " + localStorage.inccount + " ";
+    } else {
+        document.getElementById("inc").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
+
+
+function expup() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.expcount) {
+            localStorage.expcount = Number(localStorage.expcount)+10;
+        } else {
+            localStorage.expcount = 0;
+        }
+        document.getElementById("exp").innerHTML = "$ " + localStorage.expcount + " ";
+    } else {
+        document.getElementById("exp").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function expdwn() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.expcount) {
+            localStorage.expcount = Number(localStorage.expcount)-1;
+        } else {
+            localStorage.expcount = 0;
+        }
+        document.getElementById("exp").innerHTML = "$ " + localStorage.expcount + " ";
+    } else {
+        document.getElementById("exp").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
+
+function logiteminc(){
+var datenow = Date.now();
+var incnow = localStorage.inccount;
+localStorage.loginc = datenow + ", $" + localStorage.inccount;
+localStorage.setItem(Date.now()+" INC", localStorage.inccount);
+}
+
+function logitemexp(){
+var datenow = Date.now();
+var expnow = localStorage.expcount;
+localStorage.logexp = datenow + ", $" + expnow;
+localStorage.setItem(Date.now()+" EXP", localStorage.expcount);
+}
+
+
+     function reset() {
+       localStorage.clear();
+       }
+
+
+ function showamt() {
+       document.getElementById("sho").innerHTML = "INC TTL=<br>$" + localStorage.inccount + " ";
+       }
+
+
+
+function showamtexp() {
+       document.getElementById("shoexp").innerHTML = "EXP TTL=<br>$" + localStorage.expcount + " ";
+       }
+
+
+
+ function net() {
+var netpl = localStorage.inccount-localStorage.expcount;
+       document.getElementById("netpl").innerHTML = "NET_PL=<br>$" + netpl + " ";
+       }
+
+
+
+function rld() {
+    location.reload();
+}
+
+function rldie() {
+localStorage.setItem(Date.now()+" IN", localStorage.inccount);
+localStorage.setItem(Date.now()+" OUT", localStorage.expcount);
+location.reload();
+}
+
+function rldexp() {
+var datenow = Date.now();
+var expnow = localStorage.expcount;
+localStorage.logexp = datenow + ", $" + expnow;
+localStorage.setItem(Date.now()+" EXP", localStorage.expcount);
+location.reload();
+}
+
+function mailamt(){
+var amt = localStorage.inccount;
+window.location.href = "http://www.refbar.com/mailinc.php?amt="+amt+"";
+}
+
+function mailamttwt(){
+var amt = localStorage.inccount;
+var dte = Date();
+var dtnw = Date.now();
+window.location.href = "https://twitter.com/intent/tweet?text=INC,"+amt+",DATE,"+dte+"";
+}
+
+function mailamtexp(){
+var amt = localStorage.expcount;
+window.location.href = "http://www.refbar.com/mailexp.php?amt="+amt+"";
+}
+
+function mailamttwtexp(){
+var amt = localStorage.expcount;
+var dte = Date();
+var dtnw = Date.now();
+window.location.href = "https://twitter.com/intent/tweet?text=EXP,"+amt+"";
+}
+
+function mailtwtie(){
+var inclcl = localStorage.inccount;
+var explcl = localStorage.expcount;
+var dte = Date();
+var dtnw = Date.now();
+window.location.href = "https://twitter.com/intent/tweet?text=INC,"+inclcl+",EXP,"+explcl+"";
+}
+
+
+function mailbasic(){
+var ttli = localStorage.inccount;
+var ttle = localStorage.expcount;
+window.location.href = "mailto:?to=&subject=INC,"+ttli+",EXP,"+ttle+"&body=INC,"+ttli+",EXP,"+ttle+"";
+}
+
+
+var month = new Array();var i = 0;month[0] = "google.com";month[1] = "twitter.com";month[2] = "amazon.com";month[3] = "costco.com";month[4] = "herewire.com";month[5] = "weather.gov";
+
+function test(){
+document.getElementById("month").innerHTML = month[i++%month.length];
+var lnk = "http://";
+document.getElementById("month").href = lnk + document.getElementById("month").innerHTML;
+}
+
+
+
+
+</script>
+</head>
+<body onload="showamt();showamtexp();">
+<p id="sho"></p>
+<button onclick="clickCounter()" type="button">INC(+)</button><span id="inc"></span>
+<p><button onclick="clickCounterDWN()" type="button">INC(-)</button></p>
+<p></p>
+
+<p><button onclick="rldie()">Log<br>AMT</button></p>
+<p><button onclick="mailamttwt()">Send<br>AMT</button></p>
+<p id="shoexp"></p>
+<button onclick="expup()" type="button">EXP(+)</button><span id="exp"></span>
+<p><button onclick="expdwn()" type="button">EXP(-)</button></p>
+<p></p>
+
+<p><button onclick="rldie()">Log<br>AMT</button></p>
+<p><button onclick="mailamttwtexp()">Send<br>AMT</button></p>
+<br>
+<p><button onclick="net()">NET<br>Pft(+)<br>Lss(-)</button></p>
+<div id="netpl"></div>
+<p><button onclick="mailtwtie()">TWIT<br>InEx<br>AMTs</button></p>
+<p><button onclick="mailbasic()">EMail<br>AMTs</button></p>
+<br><br>
+<br><br>
+
+<button onclick="rld()">RLD<br>PG</button>
+<br><br>
+<button onclick="test()">CLK<br>for<br>INET<br>List</button>
+
+<br><br>
+<a id="month" href="month"></a>
+
+<br><br>
+<br><br>
+
+<label><input type=button value="RST" onclick="reset()"> <br><i>ALL AMTs<br>to 0</i></label>
+</body>
+</html>
