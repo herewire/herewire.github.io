@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head><meta name=viewport content=width=device-width />
+<script>
+function checlist() {
+    window.location.assign("incx.html")
+}
+
+function iexttl() {
+    window.location.assign("index.html")
+}
+
+function goBack() {
+    window.history.back();
+}
+
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.expbasic) {
+            localStorage.expbasic = Number(localStorage.expbasic)+10;
+        } else {
+            localStorage.expbasic = 0;
+        }
+        document.getElementById("result").innerHTML = localStorage.expbasic;
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function clickCounterDWN() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.expbasic) {
+            localStorage.expbasic = Number(localStorage.expbasic)-1;
+        } else {
+            localStorage.expbasic = 0;
+        }
+        document.getElementById("result").innerHTML = localStorage.expbasic;
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function clickcat() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.cat) {
+            localStorage.cat = Number(localStorage.cat)+1;
+        } else {
+            localStorage.cat = 0;
+        }
+        document.getElementById("cat").innerHTML = " " + localStorage.cat;
+    } else {
+        document.getElementById("cat").innerHTML = "browser does not support web storage...";
+    }
+}
+
+function clickcatdwn() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.cat) {
+            localStorage.cat = Number(localStorage.cat)-1;
+        } else {
+            localStorage.cat = 0;
+        }
+        document.getElementById("cat").innerHTML = " " + localStorage.cat;
+    } else {
+        document.getElementById("cat").innerHTML = "browser does not support web storage...";
+    }
+}
+
+
+
+function reset() {
+       localStorage.clear();
+       }
+
+function rstamts() {
+localStorage.cat=0;
+localStorage.expbasic=0;
+       }
+
+function mailamt(){
+var amt = localStorage.expbasic;
+var cat = localStorage.cat;
+var dte = Date();
+window.location.href = "https://twitter.com/intent/tweet?text=EXP,"+amt+",CGY "+cat+"";
+}
+
+
+function mailbasic(){
+var ttli = localStorage.incbasic;
+var cati = localStorage.cat;
+var ttle = localStorage.expbasic;
+window.location.href = "mailto:?to=&subject=EXP,CGY"+cati+","+ttle+"&body=EXP,CGY"+cati+","+ttle+"";
+}
+
+function rld() {
+    location.reload();
+}
+
+
+</script>
+</head>
+<body onload="reset(); clickCounter();">
+<button onclick=checlist()>EXP<br><---</button>
+<span id="result"></span>
+<p><button onclick="clickCounter()" type="button">( + )</button></p>
+<p><button onclick="clickCounterDWN()" type="button">( - )</button></p>
+<button onclick="clickcat()">cgy(+)</button>
+<span id="cat"></span>
+<p><button onclick="clickcatdwn()">cgy(-)</button></p>
+<p><button onclick="mailamt(); reset();">----><br>TWT</button></p>
+<p><button onclick="mailbasic(); rstamts();">----><br>EML</button></p>
+<br>
+<p><button onclick="rstamts(); rld();">RST<br>AMTs</button></p>
+<br><br>
+<p><button onclick="iexttl()">RTN<br>to<br>IEMain</button></p>
+<br><br>
+</body>
+</html>
