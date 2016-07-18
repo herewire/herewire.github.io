@@ -81,7 +81,8 @@ function mailamt(){
 var amt = localStorage.expbasic;
 var cat = localStorage.cat;
 var dte = Date();
-window.location.href = "https://twitter.com/intent/tweet?text=EXP,"+amt+",CGY "+cat+"";
+var dtedtl = Date.now();
+window.location.href = "https://twitter.com/intent/tweet?text=EXP,"+amt+",CGY"+cat+"";
 }
 
 
