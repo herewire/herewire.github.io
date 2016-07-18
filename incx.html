@@ -97,6 +97,14 @@ function rld() {
     location.reload();
 }
 
+var month = new Array();var i = 0;month[0] = "google.com";month[1] = "twitter.com";month[2] = "amazon.com";month[3] = "costco.com";month[4] = "herewire.com";month[5] = "weather.gov";
+
+function inet(){
+document.getElementById("lnk").innerHTML = month[i++%month.length];
+var lnk = "http://";
+document.getElementById("lnk").href = lnk + document.getElementById("lnk").innerHTML;
+}
+
 
 </script>
 </head>
@@ -116,6 +124,9 @@ function rld() {
 <p><button onclick="rstamts(); rld();">RST<br>AMTs</button></p>
 <br><br>
 <p><button onclick="iexttl()">RTN<br>to<br>IEMain</button></p>
+<br><br>
+<p><button onclick="inet()">INET<br>LIST<br>---></button></p>
+<div id="lnk"></div>
 <br><br>
 </body>
 </html>
