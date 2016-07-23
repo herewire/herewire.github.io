@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head><meta name=viewport content=width=device-width />
+<script>
+function mail(){
+var amt = localStorage.inccount;
+window.location.href = "mailto:?to=&subject=INC&body=INC";
+}
+
+function twt(){
+var amt = localStorage.inccount;
+var dte = Date();
+var dtnw = Date.now();
+window.location.href = "https://twitter.com/intent/tweet?text=INC,DATE,"+dte+",DATE_SERIAL,"+dtnw+"";
+}
+
+function twtmbl(){
+var amt = localStorage.inccount;
+var dte = Date();
+var dtnw = Date.now();
+window.location.href = "https://mobile.twitter.com/compose/tweet?tweet[text]=INC,DATE,"+dte+",DATE_SERIAL,"+dtnw+"";
+}
+</script></head>
+
+<body>
+
+
+<button onclick="twt()">TWIT<br>NOW!!</button><br><br>
+
+<button onclick="twtmbl()">TWTNW<br>(BKUP)</button><br><br>
+
+<button onclick="mail()">EMAIL<br>NOW!!</button><br><br>
+
+</body></html>
