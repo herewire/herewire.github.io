@@ -1,0 +1,51 @@
+
+
+
+<body>
+
+
+
+<button id='button'>Click for Information</button>
+  <div id="newpost">
+    Flight Service Stations have discontinued Airport
+Advisory services within the Continental U.S.,
+Puerto Rico, and Hawaii, due to declining demand
+and pilot requests. Therefore, we have removed
+references to Remote Airport Advisory service and
+Local Airport Advisory service from FAA directives.
+Airport Advisory services in Alaska remain
+unchanged. This change reflects the migration of En Route Flight
+Advisory Service responsibilities into the Inflight
+position and the discontinued use of the term “Flight
+Watch” within the Continental U.S. and Puerto Rico.
+The paragraphs within chapter 7 have also been
+updated due to changes in Advisory Circular
+00-45H, Aviation Weather Services.
+</div>
+
+  
+<br><br><br>
+
+
+
+
+
+
+<script>
+var button = document.getElementById('button');
+
+button.onclick = function() {
+    var div = document.getElementById('newpost');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+</script>
+
+
+<br><br><br>
+
+
