@@ -26,7 +26,7 @@ updated due to changes in Advisory Circular
   
 <br><br><br>
 <button id='bttnsho'>Click to Dpy Info</button>
-  <div id="infopass">SAC VORTAC NT MNT</div>
+  <div id="infopass"></div>
 
 
 
@@ -48,7 +48,7 @@ button.onclick = function() {
 var bttn = document.getElementById('bttnsho');
 
 bttn.onclick = function() {
-    var div = document.getElementById('infopass');
+    var div = document.getElementById('infopass').innerHTML="SAC VORTAC NT MNT";
     if (div.style.display !== 'none') {
         div.style.display = 'none';
     }
