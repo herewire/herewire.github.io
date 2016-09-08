@@ -1,7 +1,7 @@
 <meta name=viewport content=width=device-width />
 
 
-<body>
+<body onload="shoinfo()">
 
 
 
@@ -26,7 +26,7 @@ updated due to changes in Advisory Circular
   
 <br><br><br>
 <button id='bttnsho'>Click to Dpy Info</button>
-  <div id="infopass"></div>
+  <div id="infopass">SAC VORTAC NT MNT</div>
 
 
 
@@ -48,16 +48,24 @@ button.onclick = function() {
 var bttn = document.getElementById('bttnsho');
 
 bttn.onclick = function() {
-    var div = document.getElementById('infopass').innerHTML="SAC VORTAC NT MNT";
-    if (div.style.display = 'none') {
-        div.style.display = 'block';
+    var div = document.getElementById('infopass');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
     }
     else {
-        div.style.display = 'none';
+        div.style.display = 'block';
     }
 };
 
-
+function shoinfo(){
+    var div = document.getElementById('infopass');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
 
 </script>
 
