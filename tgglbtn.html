@@ -1,6 +1,18 @@
+<meta name=viewport content=width=device-width />
 
+<script>
+var button = document.getElementById('button');
 
-
+button.onclick = function() {
+    var div = document.getElementById('newpost');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+</script>
 <body>
 
 
@@ -16,8 +28,8 @@ Local Airport Advisory service from FAA directives.
 Airport Advisory services in Alaska remain
 unchanged. This change reflects the migration of En Route Flight
 Advisory Service responsibilities into the Inflight
-position and the discontinued use of the term ìFlight
-Watchî within the Continental U.S. and Puerto Rico.
+position and the discontinued use of the term ‚ÄúFlight
+Watch‚Äù within the Continental U.S. and Puerto Rico.
 The paragraphs within chapter 7 have also been
 updated due to changes in Advisory Circular
 00-45H, Aviation Weather Services.
@@ -31,19 +43,7 @@ updated due to changes in Advisory Circular
 
 
 
-<script>
-var button = document.getElementById('button');
 
-button.onclick = function() {
-    var div = document.getElementById('newpost');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
-    }
-    else {
-        div.style.display = 'block';
-    }
-};
-</script>
 
 
 <br><br><br>
