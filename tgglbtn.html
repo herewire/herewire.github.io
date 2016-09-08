@@ -25,6 +25,9 @@ updated due to changes in Advisory Circular
 
   
 <br><br><br>
+<button id='bttnsho'>Click to Dpy Info</button>
+  <div id="infopass">SAC VORTAC NT MNT</div>
+
 
 
 <script>
@@ -39,6 +42,23 @@ button.onclick = function() {
         div.style.display = 'block';
     }
 };
+
+
+
+var bttn = document.getElementById('bttnsho');
+
+bttn.onclick = function() {
+    var div = document.getElementById('infopass');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+
+
+
 </script>
 
 
