@@ -138,7 +138,7 @@ var ttli = localStorage.incbasic;
 var cati = localStorage.cat;
 var ttle = localStorage.expbasic;
 var cgydtl = document.getElementById("txcgyexp").innerHTML;
-var mailaddr = document.getElementById("mailaddr").innerHTML;
+var mailaddr = document.getElementById("mailadd").innerHTML;
 var mailmsg = document.getElementById("mailmsg").innerHTML;
 window.location.href = "mailto:"+mailaddr+"?subject="+mailmsg+"&body="+mailmsg+"";
 }
@@ -170,6 +170,16 @@ document.getElementById("txcgy").innerHTML = cgyinc[i++%cgyinc.length];
 document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 }
  
+ 
+ 
+ 
+  var emladd = new Array();var i = 0;emladd[0] = "msgjet@gmail.com";emladd[1] = "hspanet@gmail.com";emladd[2] = "5303072761@txt.att.net";emladd[3] = "i@i.i";
+ 
+  function mailaddress(){
+document.getElementById("mailadd").innerHTML = emladd[i++%emladd.length];
+}
+ 
+ 
 
 </script>
 
@@ -187,4 +197,8 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 <button onclick="reset(); rld();">RST<br>ALL<br>AMTs</button>
 <br><br>EXPTTL<br>
 <span id="expttl"></span><br><br>
+<button onclick="mailaddress()">MAILADDRESS</button>
+<span id="mailadd"></span><br>
+<button onclick="mailmsgauto()">MAILMSG</button>
+
 </body></html>
