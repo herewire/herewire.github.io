@@ -68,6 +68,21 @@ function expsum() {
 }
 
 
+function net() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.net) {
+            localStorage.net = Number(localStorage.incsum)-Number(localStorage.expsum);
+        } else {
+            localStorage.net = 0;
+        }
+        document.getElementById("netttl").innerHTML = localStorage.net;
+    } else {
+        document.getElementById("netttl").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
+
 
 function clickcat() {
     if(typeof(Storage) !== "undefined") {
@@ -128,7 +143,7 @@ var ttli = localStorage.incbasic;
 var cati = localStorage.cat;
 var ttle = localStorage.expbasic;
 var cgydtl = document.getElementById("txcgyexp").innerHTML;
-window.location.href = "mailto:hspanet@gmail.com?subject=EXP,"+cgydtl+","+ttle+"&body=EXP,"+cgydtl+","+ttle+"";
+window.location.href = "mailto:?to=hspanet@gmail.com&subject=EXP,"+cgydtl+","+ttle+"&body=EXP,"+cgydtl+","+ttle+"";
 }
 
 
@@ -142,7 +157,7 @@ document.getElementById("lnk").href = http + document.getElementById("lnk").inne
 
 
 
- var cgyinc = new Array();var i = 0;cgyinc[0] = "1 Gross receipts or sales";cgyinc[1] = "2 Returns and allowances(entr as - nbr)";cgyinc[2] = "4 Cost of goods sold(entr as - nbr)";cgyinc[3] = "6 Other income including federal and state gasoline or fuel tax credit or refund";
+ var cgyinc = new Array();var i = 0;cgyinc[0] = "01 Gross receipts or sales";cgyinc[1] = "02 Returns and allowances(entr as - nbr)";cgyinc[2] = "04 Cost of goods sold(entr as - nbr)";cgyinc[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";
  
  
  
@@ -150,7 +165,7 @@ document.getElementById("lnk").href = http + document.getElementById("lnk").inne
 document.getElementById("txcgy").innerHTML = cgyinc[i++%cgyinc.length];
 }
  
-  var cgyexp = new Array();var i = 0;cgyexp[0] = "8 Advertising";cgyexp[1] = "9 Car and truck expenses";cgyexp[2] = "10 Commissions and fees";cgyexp[3] = "11 Contract Labor";cgyexp[4] = "12 Depletion";cgyexp[5] = "13 Depreciation and Sect179 expense ddtn";cgyexp[6] = "14 Employee Benefit Programs";cgyexp[7] = "15 Insurance(other than health)";cgyexp[8] = "16a Interest(Mortgage(paid to banks))";cgyexp[9] = "16b Interest(Other)";  cgyexp[10] = "17 Legal and Professional Svcs";cgyexp[11] = "18 Office exp";cgyexp[12] = "19 Pension and profit-sharing plans";cgyexp[13] = "20a Rent or lease(Veh mchnry equp)";cgyexp[14] = "20b Rent or lease(Other Bus Pprty)";cgyexp[15] = "21 Repairs and maintenance";cgyexp[16] = "22 Supplies(not incl in COGS)";cgyexp[17] = "23 Taxes and Licenses";cgyexp[18] = "24a Travel Meals and Ent(Travel)";cgyexp[19] = "24b Travel Meals and Ent(Ddtbl Meals and Ent)";cgyexp[20] = "25 Utilities";cgyexp[21] = "26 Wages(less emplymnt crdts)";cgyexp[22] = "27a Other(fm Ln48)";cgyexp[23] = "28 SEP IRA QulfdPln Cntrbtn";cgyexp[24] = "29 HLTH INS (Self)";cgyexp[25] = "30 HOME business exp";
+  var cgyexp = new Array();var i = 0;cgyexp[0] = "08 Advertising";cgyexp[1] = "09 Car and truck expenses";cgyexp[2] = "10 Commissions and fees";cgyexp[3] = "11 Contract Labor";cgyexp[4] = "12 Depletion";cgyexp[5] = "13 Depreciation and Sect179 expense ddtn";cgyexp[6] = "14 Employee Benefit Programs";cgyexp[7] = "15 Insurance(other than health)";cgyexp[8] = "16a Interest(Mortgage(paid to banks))";cgyexp[9] = "16b Interest(Other)";  cgyexp[10] = "17 Legal and Professional Svcs";cgyexp[11] = "18 Office exp";cgyexp[12] = "19 Pension and profit-sharing plans";cgyexp[13] = "20a Rent or lease(Veh mchnry equp)";cgyexp[14] = "20b Rent or lease(Other Bus Pprty)";cgyexp[15] = "21 Repairs and maintenance";cgyexp[16] = "22 Supplies(not incl in COGS)";cgyexp[17] = "23 Taxes and Licenses";cgyexp[18] = "24a Travel Meals and Ent(Travel)";cgyexp[19] = "24b Travel Meals and Ent(Ddtbl Meals and Ent)";cgyexp[20] = "25 Utilities";cgyexp[21] = "26 Wages(less emplymnt crdts)";cgyexp[22] = "27a Other(fm Ln48)";cgyexp[23] = "28 SEP IRA QulfdPln Cntrbtn";cgyexp[24] = "29 HLTH INS (Self)";cgyexp[25] = "30 HOME business exp";
  
  
  
@@ -159,9 +174,24 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 }
  
 
+ function inclog(){
+ var cgydtli = document.getElementById("txcgy").innerHTML;
+ var incindamt = localStorage.incbasic
+ var date = Date.now();
+ localStorage.setItem(cgydtli+date , incindamt);
+ }
+ 
+ function explog() {
+ var cgydtle = document.getElementById("txcgyexp").innerHTML;
+ var expindamt = localStorage.expbasic;
+ var date = Date.now();
+ localStorage.setItem(cgydtle+date , expindamt);
+ }
+ 
+ 
 </script>
 
-<body onload="rstexpamts(); expsum();">
+<body onload="rstexpamts(); expsum(); net();">
 <button onclick="checlist()">EXP<br>---&gt;</button>
 <span id="expamt">0</span><br>
 <p><button onclick="incexpamt()" type="button"><br>( + )<br></button>&nbsp;&nbsp;&nbsp;
@@ -169,7 +199,7 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 <button onclick="ecgy()">EXP<br>CGY<br></button>
 <span id="txcgyexp"></span>
 <br><br><br>
-<button onclick="mailbasic(); expsum();">----&gt;<br>SETSEND</button>&nbsp;&nbsp;&nbsp;
+<button onclick="mailbasic(); expsum(); explog();">----&gt;<br>SETSEND</button>&nbsp;&nbsp;&nbsp;
 <button onclick="rstexpamts(); rld();">RST<br>IND<br>AMTs</button>
 <br><br>
 <button onclick="reset(); rld();">RST<br>ALL<br>AMTs</button>
