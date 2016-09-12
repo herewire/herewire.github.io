@@ -68,6 +68,24 @@ function expsum() {
 }
 
 
+
+function incsum() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.incsum) {
+            localStorage.incsum = Number(localStorage.incbasic)+Number(localStorage.incsum);
+        } else {
+            localStorage.incsum = 0;
+        }
+        document.getElementById("incttl").innerHTML = localStorage.incsum;
+    } else {
+        document.getElementById("incttl").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
+
+
+
 function net() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.net) {
@@ -247,7 +265,9 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 <button onclick="rstexpamts(); rld();">RST PG ENTRYs</button>
 <br><br>
 
-<br><br>EXPTTL<br>
+INCTTL<br>
+<span id="incttl"></span><br>
+EXPTTL<br>
 <span id="expttl"></span><br>
 NETPL<br>
 <span id="netttl"></span><br>
