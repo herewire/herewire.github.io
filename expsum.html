@@ -216,7 +216,7 @@ function mailnet(){
 var incsum = localStorage.incsum;
 var expsum = localStorage.expsum;
 var netpl = localStorage.net;
-window.location.href = "mailto:hspanet@gmail.com?subject=NETPL, INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"&body=INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
+window.location.href = "mailto:hspanet@gmail.com?subject=NETPL, INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"&body=INCTTL="+incsum+"%0D%0AEXPTTL="+expsum+"%0D%0ANETPL="+netpl+"";
 }
 
 
@@ -275,7 +275,7 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 <button onclick="mailbasic(); expsum(); explog(); net(); netse(); rld(); rstamts(); rstexpamts();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
 <button onclick="rstexpamts(); rld();">RST PG ENTRYs</button>
 <br><br>
-
+<button onclick="mailnet()">SEND NETPL</button><br>
 INCTTL<br>
 <span id="incttl"></span><br>
 EXPTTL<br>
