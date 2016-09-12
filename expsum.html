@@ -104,7 +104,7 @@ function netsetxbl() {
         } else {
             localStorage.netsetxbl = 0;
         }
-        document.getElementById("netsetxbl").innerHTML = localStorage.netsetxbl;
+        document.getElementById("netsetxbl").innerHTML = Math.round(localStorage.netsetxbl);
     } else {
         document.getElementById("netsetxbl").innerHTML = "Sorry, your browser does not support web storage...";
     }
