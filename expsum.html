@@ -82,6 +82,19 @@ function net() {
 }
 
 
+function netse() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.netse) {
+            localStorage.netse = Number(localStorage.net)*.9235;
+        } else {
+            localStorage.net = 0;
+        }
+        document.getElementById("neterngsse").innerHTML = localStorage.netse;
+    } else {
+        document.getElementById("neterngsse").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
 
 
 function clickcat() {
@@ -191,20 +204,22 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
  
 </script>
 
-<body onload="rstexpamts(); expsum(); net();">
-<button onclick="checlist()">EXP<br>---&gt;</button>
+<body onload="rstexpamts(); expsum(); net(); netse();">
+<button onclick="checlist()">EXP---&gt;</button>
 <span id="expamt">0</span><br>
-<p><button onclick="incexpamt()" type="button"><br>( + )<br></button>&nbsp;&nbsp;&nbsp;
-<button onclick="incexpamtdwn()" type="button"><br>( - )<br></button></p>
-<button onclick="ecgy()">EXP<br>CGY<br></button>
+<p><button onclick="incexpamt()" type="button">( + )</button>&nbsp;&nbsp;&nbsp;
+<button onclick="incexpamtdwn()" type="button">( - )</button></p>
+<button onclick="ecgy()">CATEGORY</button>
 <span id="txcgyexp"></span>
 <br><br><br>
 <button onclick="mailbasic(); expsum(); explog();">----&gt;<br>SETSEND</button>&nbsp;&nbsp;&nbsp;
-<button onclick="rstexpamts(); rld();">RST<br>IND<br>AMTs</button>
+<button onclick="rstexpamts(); rld();">RST PG ENTRYs</button>
 <br><br>
-<button onclick="reset(); rld();">RST<br>ALL<br>AMTs</button>
+<button onclick="reset(); rld();">RST ALL AMTs</button>
 <br><br>EXPTTL<br>
 <span id="expttl"></span><br><br>
 <br><br>NETPL<br>
 <span id="netttl"></span><br><br>
+<br><br>NETSE<br>
+<span id="neterngsse"></span><br><br>
 </body></html>
