@@ -89,7 +89,7 @@ function netse() {
         } else {
             localStorage.netse = 0;
         }
-        document.getElementById("netse").innerHTML = localStorage.netse;
+        document.getElementById("netse").innerHTML = Math.round(localStorage.netse);
     } else {
         document.getElementById("netse").innerHTML = "Sorry, your browser does not support web storage...";
     }
