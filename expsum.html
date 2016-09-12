@@ -85,7 +85,7 @@ function net() {
 function netse() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.netse) {
-            localStorage.netse = localStorage.net*.9235;
+            localStorage.netse = localStorage.net;
         } else {
             localStorage.net = 0;
         }
