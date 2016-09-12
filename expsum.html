@@ -85,7 +85,7 @@ function net() {
 function netse() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.netse) {
-            localStorage.netse = round(.9235*(Number(localStorage.incsum)-Number(localStorage.expsum)));
+            localStorage.netse = .9235*(Number(localStorage.incsum)-Number(localStorage.expsum));
         } else {
             localStorage.netse = 0;
         }
