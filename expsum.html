@@ -111,6 +111,22 @@ function netsetxbl() {
 }
 
 
+function netsetx() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.netsetx) {
+            localStorage.netsetx =.153*((.9235*(Number(localStorage.incsum)-Number(localStorage.expsum)))-400);
+        } else {
+            localStorage.netsetx = 0;
+        }
+        document.getElementById("netsetx").innerHTML = Math.round(localStorage.netsetx);
+    } else {
+        document.getElementById("netsetx").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
+
+
 
 function clickcat() {
     if(typeof(Storage) !== "undefined") {
@@ -219,7 +235,7 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
  
 </script>
 
-<body onload="rstexpamts(); expsum(); net(); netse(); netsetxbl();">
+<body onload="rstexpamts(); expsum(); net(); netse(); netsetxbl(); netsetx(); ">
 <button onclick="checlist()">EXP---&gt;</button>
 <span id="expamt">0</span><br><br><br>
 <p><button onclick="incexpamt()" type="button">( + )</button>&nbsp;&nbsp;&nbsp;
@@ -237,7 +253,9 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 <span id="netttl"></span><br><br>
 <br><br>NETSE<br>
 <span id="netse"></span><br><br>
-<br><br>NETSETxbl<br>
+<br><br>NETSE Txbl<br>
 <span id="netsetxbl"></span><br><br>
+<br><br>NETSE Tax<br>
+<span id="netsetx"></span><br><br>
 <button onclick="reset(); rld();">RST ALL AMTs</button>
 </body></html>
