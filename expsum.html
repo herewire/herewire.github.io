@@ -97,6 +97,21 @@ function netse() {
 
 
 
+function netsetxbl() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.netsetxbl) {
+            localStorage.netsetxbl = (.9235*(Number(localStorage.incsum)-Number(localStorage.expsum)))-400;
+        } else {
+            localStorage.netsetxbl = 0;
+        }
+        document.getElementById("netsetxbl").innerHTML = localStorage.netsetxbl;
+    } else {
+        document.getElementById("netsetxbl").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
+
 function clickcat() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.cat) {
@@ -222,5 +237,7 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 <span id="netttl"></span><br><br>
 <br><br>NETSE<br>
 <span id="netse"></span><br><br>
+<br><br>NETSETxbl<br>
+<span id="netsetxbl"></span><br><br>
 <button onclick="reset(); rld();">RST ALL AMTs</button>
 </body></html>
