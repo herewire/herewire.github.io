@@ -89,9 +89,9 @@ function netse() {
         } else {
             localStorage.net = 0;
         }
-        document.getElementById("neterngsse").innerHTML = localStorage.netse;
+        document.getElementById("netse").innerHTML = localStorage.netse;
     } else {
-        document.getElementById("neterngsse").innerHTML = "Sorry, your browser does not support web storage...";
+        document.getElementById("netse").innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
 
@@ -215,11 +215,12 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 <button onclick="mailbasic(); expsum(); explog();">----&gt;<br>SETSEND</button>&nbsp;&nbsp;&nbsp;
 <button onclick="rstexpamts(); rld();">RST PG ENTRYs</button>
 <br><br>
-<button onclick="reset(); rld();">RST ALL AMTs</button>
+
 <br><br>EXPTTL<br>
 <span id="expttl"></span><br><br>
 <br><br>NETPL<br>
 <span id="netttl"></span><br><br>
 <br><br>NETSE<br>
-<span id="neterngsse"></span><br><br>
+<span id="netse"></span><br><br>
+<button onclick="reset(); rld();">RST ALL AMTs</button>
 </body></html>
