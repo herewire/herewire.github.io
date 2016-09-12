@@ -212,6 +212,14 @@ window.location.href = "mailto:hspanet@gmail.com?subject=EXP,"+cgydtl+","+ttle+"
 }
 
 
+function mailnet(){
+var incsum = localStorage.incsum;
+var expsum = localStorage.expsum;
+var netpl = localStorage.net;
+window.location.href = "mailto:hspanet@gmail.com?subject=NETPL, INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"&body=INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
+}
+
+
 var month = new Array();var i = 0;month[0] = "google.com";month[1] = "twitter.com";month[2] = "amazon.com";month[3] = "costco.com";month[4] = "herewire.com";month[5] = "weather.gov";
 
 function inet(){
