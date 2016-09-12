@@ -26,7 +26,20 @@ updated due to changes in Advisory Circular
   
 <br><br><br>
 <button id='bttnsho'>Click to Dpy Info</button>
-  <div id="infopass">SAC VORTAC NT MNT</div>
+  <div id="infopass">SAC VORTAC NT MNT<br><br><br>JS goes here<br><br>
+  
+  <button onclick="rld()">RSTPage</button>
+  
+  <br><br>
+  
+  <button onclick="mailaddress()">MAILADDRESS</button>
+<span id="mailadd"></span>
+<button onclick="mailbdy()">MAILMSG</button>
+<span id="mailmsg"></span><br><br><br>
+<button onclick="mailmsgauto()">SENDMail</button><br><br>
+<br><br>
+  
+  </div>
 
 
 
@@ -66,6 +79,37 @@ function shoinfo(){
         div.style.display = 'block';
     }
 };
+
+
+
+function rld() {
+    location.reload();
+}
+
+
+
+function mailmsgauto(){
+var mailaddr = document.getElementById("mailadd").innerHTML;
+var mailmsg = document.getElementById("mailmsg").innerHTML;
+window.location.href = "mailto:"+mailaddr+"?subject="+mailmsg+"&body="+mailmsg+"";
+}
+
+
+ var emladd = new Array();var i = 0;emladd[0] = "msgjet@gmail.com";emladd[1] = "hspanet@gmail.com";emladd[2] = "5303072761@txt.att.net";emladd[3] = "i@i.i";
+ 
+ function mailaddress(){
+document.getElementById("mailadd").innerHTML = emladd[i++%emladd.length];
+}
+ 
+ 
+ var emlmsg = new Array();var i = 0;emlmsg[0] = "Call me";emlmsg[1] = "Last minute work";emlmsg[2] = "Do work today or soon?";emlmsg[3] = "Almost there";emlmsg[4] = "RMBR Scrpt lns whn in pblc";
+ 
+ function mailbdy(){
+document.getElementById("mailmsg").innerHTML = emlmsg[i++%emlmsg.length];
+}
+ 
+
+
 
 </script>
 
