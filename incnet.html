@@ -28,7 +28,37 @@ function goBack() {
 
 
 
-function incexpamt() {
+
+
+
+function incsetup() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.incbasic) {
+            localStorage.incbasic = Number(localStorage.incbasic)+10;
+        } else {
+            localStorage.incbasic = 0;
+        }
+        document.getElementById("result").innerHTML = localStorage.incbasic;
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function incsetdwn() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.incbasic) {
+            localStorage.incbasic = Number(localStorage.incbasic)-1;
+        } else {
+            localStorage.incbasic = 0;
+        }
+        document.getElementById("result").innerHTML = localStorage.incbasic;
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
+function expsetup() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.expbasic) {
             localStorage.expbasic = Number(localStorage.expbasic)+10;
@@ -41,7 +71,7 @@ function incexpamt() {
     }
 }
 
-function incexpamtdwn() {
+function expsetdwn() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.expbasic) {
             localStorage.expbasic = Number(localStorage.expbasic)-1;
@@ -53,6 +83,11 @@ function incexpamtdwn() {
         document.getElementById("expamt").innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
+
+
+
+
+
 
 function expsum() {
     if(typeof(Storage) !== "undefined") {
@@ -172,6 +207,10 @@ function clickcatdwn() {
     }
 }
 
+
+
+
+
 function rld() {
     location.reload();
 }
@@ -190,7 +229,7 @@ localStorage.cat=0;
 localStorage.expbasic=0;
        }
 
-function mailamt(){
+function twtinc(){
 var amt = localStorage.incbasic;
 var cat = localStorage.cat;
 var dte = Date();
@@ -200,7 +239,18 @@ window.location.href = "https://twitter.com/intent/tweet?text=INC,"+cgydtltwt+",
 }
 
 
-function mailbasic(){
+function mailinc(){
+var ttli = localStorage.incbasic;
+var cati = localStorage.cat;
+var ttle = localStorage.expbasic;
+var incsum = localStorage.incsum;
+var expsum = localStorage.expsum;
+var netpl = localStorage.net;
+var cgydtl = document.getElementById("txcgy").innerHTML;
+window.location.href = "mailto:hspanet@gmail.com?subject=INC,"+cgydtl+","+ttle+"&body=INC,"+cgydtl+","+ttle+", INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
+}
+
+function mailexp(){
 var ttli = localStorage.incbasic;
 var cati = localStorage.cat;
 var ttle = localStorage.expbasic;
@@ -247,6 +297,17 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 }
  
 
+
+ var cgyie = new Array();var i = 0;cgyie[0] = "01 Gross receipts or sales";cgyie[1] = "02 Returns and allowances(entr as - nbr)";cgyie[2] = "04 Cost of goods sold(entr as - nbr)";cgyie[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";cgyie[4] = "08 Advertising";cgyie[5] = "09 Car and truck expenses";cgyie[6] = "10 Commissions and fees";cgyie[7] = "11 Contract Labor";cgyie[8] = "12 Depletion";cgyie[9] = "13 Depreciation and Sect179 expense ddtn";cgyie[10] = "14 Employee Benefit Programs";cgyie[11] = "15 Insurance(other than health)";cgyie[12] = "16a Interest(Mortgage(paid to banks))";cgyie[13] = "16b Interest(Other)";cgyie[14] = "17 Legal and Professional Svcs";cgyie[15] = "18 Office exp";cgyie[16] = "19 Pension and profit-sharing plans";cgyie[17] = "20a Rent or lease(Veh mchnry equp)";cgyie[18] = "20b Rent or lease(Other Bus Pprty)";cgyie[19] = "21 Repairs and maintenance";cgyie[20] = "22 Supplies(not incl in COGS)";cgyie[21] = "23 Taxes and Licenses";cgyie[22] = "24a Travel Meals and Ent(Travel)";cgyie[23] = "24b Travel Meals and Ent(Ddtbl Meals and Ent)";cgyie[24] = "25 Utilities";cgyie[25] = "26 Wages(less emplymnt crdts)";cgyie[26] = "27a Other(fm Ln48)";cgyie[27] = "28 SEP IRA QulfdPln Cntrbtn";cgyie[28] = "29 HLTH INS (Self)";cgyie[29] = "30 HOME business exp";
+ 
+ 
+ 
+ function iecgy(){
+document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
+}
+
+
+
  function inclog(){
  var cgydtli = document.getElementById("txcgy").innerHTML;
  var incindamt = localStorage.incbasic
@@ -265,15 +326,15 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 </script>
 
 <body onload="rstamts(); rstexpamts(); expsum(); net(); netse(); netsetxbl(); netsetx(); incsum(); ">
-<button onclick="checlist()">EXP---&gt;</button>
-<span id="expamt">0</span><br><br><br>
-<p><button onclick="incexpamt()" type="button">( + )</button>&nbsp;&nbsp;&nbsp;
-<button onclick="incexpamtdwn()" type="button">( - )</button></p><br><br>
+<button onclick="checlist()">INC---&gt;</button>
+<span id="incamt">0</span><br><br><br>
+<p><button onclick="incsetup()" type="button">( + )</button>&nbsp;&nbsp;&nbsp;
+<button onclick="incsetdwn()" type="button">( - )</button></p><br><br>
 <button onclick="ecgy()">CATEGORY</button>
-<span id="txcgyexp"></span>
+<span id="txcgy"></span>
 <br><br><br>
-<button onclick="expsum(); incsum(); explog(); net(); mailbasic(); netse(); rld(); rstamts(); rstexpamts();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
-<button onclick="rstexpamts(); rld();">RST PG ENTRYs</button>
+<button onclick="expsum(); incsum(); explog();inclog(); net(); mailinc(); netse(); rld(); rstamts(); rstexpamts();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
+<button onclick="rstamts(); rstexpamts(); rld();">RST PG ENTRYs</button>
 <br><br><br>
 <button onclick="mailnet()">SEND NETPL</button><br><br>
 INCTTL<br>
