@@ -306,7 +306,7 @@ document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
 
  function inclog() {
  var cgydtli = document.getElementById("txcgy").innerHTML;
- var incindamt = localStorage.incbasic
+ var incindamt = localStorage.incbasic;
  var date = Date.now();
  localStorage.setItem(cgydtli+date , incindamt);
  }
@@ -321,7 +321,7 @@ document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
  
 </script>
 
-<body onload="rstamts(); expsum(); net(); netse(); netsetxbl(); netsetx(); incsum(); ">
+<body onload="rstamts(); expsum(); incsum(); net(); netse(); netsetxbl(); netsetx(); ">
 <button onclick="pgchg()">INC---&gt;</button>
 <span id="incamt">0</span><br><br><br>
 <p><button onclick="incsetup()">( + )</button>&nbsp;&nbsp;&nbsp;
