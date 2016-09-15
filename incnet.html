@@ -321,7 +321,7 @@ document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
  
 </script>
 
-<body onload="rstamts(); rstexpamts(); expsum(); net(); netse(); netsetxbl(); netsetx(); incsum(); ">
+<body onload="rstamts(); expsum(); net(); netse(); netsetxbl(); netsetx(); incsum(); ">
 <button onclick="pgchg()">INC---&gt;</button>
 <span id="incamt">0</span><br><br><br>
 <p><button onclick="incsetup()">( + )</button>&nbsp;&nbsp;&nbsp;
@@ -330,7 +330,7 @@ document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
 <span id="txcgy"></span>
 <br><br><br>
 <button onclick="expsum(); incsum(); net(); netse(); explog(); inclog(); mailinc(); rstamts(); rld();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
-<button onclick="rstamts(); rstexpamts(); rld();">RST PG ENTRYs</button>
+<button onclick="rstamts(); rld();">RST PG ENTRYs</button>
 <br><br><br>
 <button onclick="mailnet()">SEND NETPL</button><br><br>
 INCTTL<br>
