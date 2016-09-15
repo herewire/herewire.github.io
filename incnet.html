@@ -21,6 +21,9 @@ function iexttl() {
     window.location.assign("index.html")
 }
 
+function cpyrtck () {
+	window.location.assign("https://copyright.gov")
+}
 
 function goBack() {
     window.history.back();
@@ -229,7 +232,7 @@ localStorage.cat=0;
 localStorage.expbasic=0;
        }
 
-function twtinc(){
+function twtinc() {
 var amt = localStorage.incbasic;
 var cat = localStorage.cat;
 var dte = Date();
@@ -239,7 +242,7 @@ window.location.href = "https://twitter.com/intent/tweet?text=INC,"+cgydtltwt+",
 }
 
 
-function mailinc(){
+function mailinc() {
 var ttli = localStorage.incbasic;
 var cati = localStorage.cat;
 var ttle = localStorage.expbasic;
@@ -250,7 +253,7 @@ var cgydtl = document.getElementById("txcgy").innerHTML;
 window.location.href = "mailto:hspanet@gmail.com?subject=INC,"+cgydtl+","+ttle+"&body=INC,"+cgydtl+","+ttle+", INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
 }
 
-function mailexp(){
+function mailexp() {
 var ttli = localStorage.incbasic;
 var cati = localStorage.cat;
 var ttle = localStorage.expbasic;
@@ -262,7 +265,7 @@ window.location.href = "mailto:hspanet@gmail.com?subject=EXP,"+cgydtl+","+ttle+"
 }
 
 
-function mailnet(){
+function mailnet() {
 var incsum = localStorage.incsum;
 var expsum = localStorage.expsum;
 var netpl = localStorage.net;
@@ -305,7 +308,7 @@ document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
 
 
 
- function inclog(){
+ function inclog() {
  var cgydtli = document.getElementById("txcgy").innerHTML;
  var incindamt = localStorage.incbasic
  var date = Date.now();
