@@ -38,9 +38,9 @@ function incsetup() {
         } else {
             localStorage.incbasic = 0;
         }
-        document.getElementById("result").innerHTML = localStorage.incbasic;
+        document.getElementById("incamt").innerHTML = localStorage.incbasic;
     } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        document.getElementById("incamt").innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
 
@@ -51,9 +51,9 @@ function incsetdwn() {
         } else {
             localStorage.incbasic = 0;
         }
-        document.getElementById("result").innerHTML = localStorage.incbasic;
+        document.getElementById("incamt").innerHTML = localStorage.incbasic;
     } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        document.getElementById("incamt").innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
 
@@ -328,8 +328,8 @@ document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
 <body onload="rstamts(); rstexpamts(); expsum(); net(); netse(); netsetxbl(); netsetx(); incsum(); ">
 <button onclick="checlist()">INC---&gt;</button>
 <span id="incamt">0</span><br><br><br>
-<p><button onclick="incsetup()" type="button">( + )</button>&nbsp;&nbsp;&nbsp;
-<button onclick="incsetdwn()" type="button">( - )</button></p><br><br>
+<p><button onclick="incsetup()">( + )</button>&nbsp;&nbsp;&nbsp;
+<button onclick="incsetdwn()">( - )</button></p><br><br>
 <button onclick="icgy()">CATEGORY</button>
 <span id="txcgy"></span>
 <br><br><br>
