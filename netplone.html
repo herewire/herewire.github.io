@@ -2,10 +2,10 @@
 <body onload="showi(); showe();">
 
 <button id='incopen'>INCOME</button>
-  <div id="incbttns"></div>
+  <div id="incbttns">Income Amt & Cgy here.</div>
   <br><br>
 <button id='expopen'>EXPENSE</button>
-  <div id="expbttns"></div>
+  <div id="expbttns">Exp Amt & Cgy here.</div>
 
 <script>
 var bttni = document.getElementById('incopen');
@@ -29,6 +29,31 @@ function shoi(){
         div.style.display = 'block';
     }
 };
+
+
+
+var bttne = document.getElementById('expopen');
+
+bttne.onclick = function() {
+    var div = document.getElementById('expbttns');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+
+function shoe(){
+    var div = document.getElementById('expbttns');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+
 
 
 
