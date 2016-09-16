@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-<body>
+<body onload="showi(); showe();">
 
 <button id='incopen'>INCOME</button>
   <div id="incbttns">Income Amt & Cgy here.</div>
@@ -20,7 +20,7 @@ bttni.onclick = function() {
     }
 };
 
-function shoi(){
+function showi(){
     var div = document.getElementById('incbttns');
     if (div.style.display !== 'none') {
         div.style.display = 'none';
@@ -44,7 +44,7 @@ bttne.onclick = function() {
     }
 };
 
-function shoe(){
+function showe(){
     var div = document.getElementById('expbttns');
     if (div.style.display !== 'none') {
         div.style.display = 'none';
