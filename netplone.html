@@ -1,0 +1,35 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<body onload="showi(); showe();">
+
+<button id='incopen'>INCOME</button>
+  <div id="incbttns"></div>
+  <br><br>
+<button id='expopen'>EXPENSE</button>
+  <div id="expbttns"></div>
+
+<script>
+var bttni = document.getElementById('incopen');
+
+bttni.onclick = function() {
+    var div = document.getElementById('incbttns');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+
+function shoi(){
+    var div = document.getElementById('incbttns');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+
+
+
+</script>
