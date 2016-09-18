@@ -388,7 +388,8 @@ function mailamttwt(){
 var amt = localStorage.inccount;
 var dte = Date();
 var dtnw = Date.now();
-window.location.href = "https://twitter.com/intent/tweet?text=INC,"+amt+",DATE,"+dtnw+"";
+var cgy = document.getElementById("txcgyie").innerHTML;
+window.location.href = "https://twitter.com/intent/tweet?text="_"+cgy+"_"+amt+"_DATE_"+dtnw+"";
 }
 
 
