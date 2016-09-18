@@ -25,7 +25,7 @@ a:active {color: cyan;
 
 
 
-<body onload="showi(); showe(); rstamts(); expsum(); incsum(); net(); netse(); netsetxbl(); netsetx();">
+<body onload="showi(); showe(); rstamts();">
 <br>
 <button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;"  id='incopen'>INCOME</button>
   <div id="incbttns"><br>
@@ -37,7 +37,7 @@ Inc Amt&nbsp;
 <button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="icgy()">CATEGORY</button>
 <span id="txcgy"></span>
 <br><br><br><br>
-<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="expsum(); incsum(); net(); inclog(); mailinc(); rstamts(); rld();">SEND---&gt;</button>&nbsp;&nbsp;&nbsp;<br><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="maili(); rstamts(); rld();">SEND---&gt;</button>&nbsp;&nbsp;&nbsp;<br><br><br>
 <button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="rstamts(); rld();">RST PG ENTRYs</button>
 <br><br><br>
 <!--
@@ -389,6 +389,31 @@ var dte = Date();
 var dtnw = Date.now();
 var cgydtltwt = document.getElementById("txcgy").innerHTML;
 window.location.href = "https://twitter.com/intent/tweet?text=INC,"+cgydtltwt+","+amt+",DTESrlNbr_"+dtnw+"";
+}
+
+
+function maili() {
+var ttli = localStorage.incbasic;
+var cati = localStorage.cat;
+var ttle = localStorage.expbasic;
+var incsum = localStorage.incsum;
+var expsum = localStorage.expsum;
+var netpl = localStorage.net;
+var inc = document.getElementById("incamt").innerHTML;
+var cgydtli = document.getElementById("txcgy").innerHTML;
+window.location.href = "mailto:hspanet@gmail.com?subject=INC,"+cgydtli+","+inc+"&body=INC,"+cgydtli+","+inc+"";
+}
+
+function maile() {
+var ttli = localStorage.incbasic;
+var cati = localStorage.cat;
+var ttle = localStorage.expbasic;
+var incsum = localStorage.incsum;
+var expsum = localStorage.expsum;
+var netpl = localStorage.net;
+var exp = document.getElementById("expamt").innerHTML;
+var cgydtle = document.getElementById("txcgyexp").innerHTML;
+window.location.href = "mailto:hspanet@gmail.com?subject=EXP,"+cgydtle+","+exp+"&body=EXP,"+cgydtle+","+exp+"";
 }
 
 
