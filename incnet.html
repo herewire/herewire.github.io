@@ -1,5 +1,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><title>NetPL</title>
 
+
+<style>
+body {
+background-color: black;
+color: cyan;
+}/* unvisited link */
+a:link {color: cyan;
+}
+
+/* visited link */
+a:visited {color: cyan;
+}
+
+/* mouse over link */
+a:hover {color: cyan;
+}
+
+/* selected link */
+a:active {color: cyan;
+}body {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;}
+</style>
+
+
+
+
 <script>
 function expstart() {
     window.location.assign("expwtch.html")
@@ -324,17 +349,17 @@ document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
 </script>
 
 <body onload="rstamts(); expsum(); incsum(); net(); netse(); netsetxbl(); netsetx(); ">
-<button onclick="pgchg()">INC---&gt;</button>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="pgchg()">INC---&gt;</button>
 <span id="incamt">0</span><br><br><br>
-<p><button onclick="incsetup()">( + )</button>&nbsp;&nbsp;&nbsp;
-<button onclick="incsetdwn()">( - )</button></p><br><br>
-<button onclick="icgy()">CATEGORY</button>
+<p><button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="incsetup()">( + )</button>&nbsp;&nbsp;&nbsp;
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="incsetdwn()">( - )</button></p><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="icgy()">CATEGORY</button>
 <span id="txcgy"></span>
 <br><br><br>
-<button onclick="expsum(); incsum(); net(); inclog(); mailinc(); rstamts(); rld();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
-<button onclick="rstamts(); rld();">RST PG ENTRYs</button>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="expsum(); incsum(); net(); inclog(); mailinc(); rstamts(); rld();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="rstamts(); rld();">RST PG ENTRYs</button>
 <br><br><br>
-<button onclick="mailnet()">SEND NETPL</button><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="mailnet()">SEND NETPL</button><br><br>
 INCTTL<br>
 <span id="incttl"></span><br>
 EXPTTL<br>
@@ -347,5 +372,5 @@ NETSE Txbl<br>
 <span id="netsetxbl"></span><br>
 NETSE Tax<br>
 <span id="netsetx"></span><br><br>
-<button onclick="reset(); rld();">RST ALL AMTs</button>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="reset(); rld();">RST ALL AMTs</button>
 </body></html>
