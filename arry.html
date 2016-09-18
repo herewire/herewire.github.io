@@ -1,0 +1,83 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+
+<style>
+body {
+background-color: black;
+color: cyan;
+}/* unvisited link */
+a:link {color: cyan;
+}
+
+/* visited link */
+a:visited {color: cyan;
+}
+
+/* mouse over link */
+a:hover {color: cyan;
+}
+
+/* selected link */
+a:active {color: cyan;
+}body {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;}
+</style>
+
+
+
+
+<body>
+<br>
+<br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="iecgy()">CATEGORY</button>
+<span id="txcgyie"></span>
+<br><br><br><br>
+
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="inet()">ADs</button>
+<br><br>
+<a id="adlnk" href="adlnk"></a>
+
+<br><br><br>
+
+
+
+
+
+
+<script>
+
+
+var month = new Array();var i = 0;month[0] = "google.com";month[1] = "etsy.com";month[2] = "amazon.com";month[3] = "costco.com";month[4] = "target.com";month[5] = "weather.gov";
+
+function inet() {
+document.getElementById("adlnk").innerHTML = month[i++%month.length];
+var http = "http://";
+document.getElementById("adlnk").href = http + document.getElementById("adlnk").innerHTML;
+}
+
+
+
+ var cgyinc = new Array();var i = 0;cgyinc[0] = "01 Gross receipts or sales";cgyinc[1] = "02 Returns and allowances(entr as - nbr)";cgyinc[2] = "04 Cost of goods sold(entr as - nbr)";cgyinc[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";
+ 
+ function icgy(){
+document.getElementById("txcgy").innerHTML = cgyinc[i++%cgyinc.length];
+}
+ 
+ 
+ 
+  var cgyexp = new Array();var i = 0;cgyexp[0] = "08 Advertising";cgyexp[1] = "09 Car and truck expenses";cgyexp[2] = "10 Commissions and fees";cgyexp[3] = "11 Contract Labor";cgyexp[4] = "12 Depletion";cgyexp[5] = "13 Depreciation and Sect179 expense ddtn";cgyexp[6] = "14 Employee Benefit Programs";cgyexp[7] = "15 Insurance(other than health)";cgyexp[8] = "16a Interest(Mortgage(paid to banks))";cgyexp[9] = "16b Interest(Other)";  cgyexp[10] = "17 Legal and Professional Svcs";cgyexp[11] = "18 Office exp";cgyexp[12] = "19 Pension and profit-sharing plans";cgyexp[13] = "20a Rent or lease(Veh mchnry equp)";cgyexp[14] = "20b Rent or lease(Other Bus Pprty)";cgyexp[15] = "21 Repairs and maintenance";cgyexp[16] = "22 Supplies(not incl in COGS)";cgyexp[17] = "23 Taxes and Licenses";cgyexp[18] = "24a Travel Meals and Ent(Travel)";cgyexp[19] = "24b Travel Meals and Ent(Ddtbl Meals and Ent)";cgyexp[20] = "25 Utilities";cgyexp[21] = "26 Wages(less emplymnt crdts)";cgyexp[22] = "27a Other(fm Ln48)";cgyexp[23] = "28 SEP IRA QulfdPln Cntrbtn";cgyexp[24] = "29 HLTH INS (Self)";cgyexp[25] = "30 HOME business exp";
+ 
+  function ecgy(){
+document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
+}
+ 
+
+
+
+ var cgyie = new Array();var i = 0;cgyie[0] = "01 Gross receipts or sales";cgyie[1] = "02 Returns and allowances(entr as - nbr)";cgyie[2] = "04 Cost of goods sold(entr as - nbr)";cgyie[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";cgyie[4] = "08 Advertising";cgyie[5] = "09 Car and truck expenses";cgyie[6] = "10 Commissions and fees";cgyie[7] = "11 Contract Labor";cgyie[8] = "12 Depletion";cgyie[9] = "13 Depreciation and Sect179 expense ddtn";cgyie[10] = "14 Employee Benefit Programs";cgyie[11] = "15 Insurance(other than health)";cgyie[12] = "16a Interest(Mortgage(paid to banks))";cgyie[13] = "16b Interest(Other)";cgyie[14] = "17 Legal and Professional Svcs";cgyie[15] = "18 Office exp";cgyie[16] = "19 Pension and profit-sharing plans";cgyie[17] = "20a Rent or lease(Veh mchnry equp)";cgyie[18] = "20b Rent or lease(Other Bus Pprty)";cgyie[19] = "21 Repairs and maintenance";cgyie[20] = "22 Supplies(not incl in COGS)";cgyie[21] = "23 Taxes and Licenses";cgyie[22] = "24a Travel Meals and Ent(Travel)";cgyie[23] = "24b Travel Meals and Ent(Ddtbl Meals and Ent)";cgyie[24] = "25 Utilities";cgyie[25] = "26 Wages(less emplymnt crdts)";cgyie[26] = "27a Other(fm Ln48)";cgyie[27] = "28 SEP IRA QulfdPln Cntrbtn";cgyie[28] = "29 HLTH INS (Self)";cgyie[29] = "30 HOME business exp";
+ 
+ function iecgy(){
+document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
+}
+
+
+</script>
