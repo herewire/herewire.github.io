@@ -33,7 +33,16 @@ IE Amt=<span id="incamt">0</span><br>
 <br>
 <button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="iecgy()">CATEGORY</button>
 <span id="txcgyie"></span>
-<br><br><br><br>
+<br><br><br>
+
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="maili()">SEND---&gt;</button>&nbsp;&nbsp;&nbsp;<br><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="mailamttwt()">TWT---&gt;</button>&nbsp;&nbsp;&nbsp;<br><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="reset(); rld();">RST PG ENTRYs</button>
+
+
+
+
+<br><br><br><br><br><br>
 
 <button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="inet()">ADs</button>
 <br><br><br><br>
@@ -48,6 +57,18 @@ IE Amt=<span id="incamt">0</span><br>
 
 <script>
 
+function rld() {
+    location.reload();
+}
+
+function reset() {
+   localStorage.clear();
+}
+
+function rstamts() {
+localStorage.expbasic=0;
+localStorage.incbasic=0;
+}
 
 
 function incsetup() {
@@ -75,6 +96,9 @@ function incsetdwn() {
         document.getElementById("incamt").innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
+
+
+
 
 
 
@@ -110,6 +134,25 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
  function iecgy(){
 document.getElementById("txcgyie").innerHTML = cgyie[i++%cgyie.length];
 }
+
+
+function mailamttwt(){
+var amt = localStorage.incbasic;
+var dte = Date();
+var dtnw = Date.now();
+var cgy = document.getElementById("txcgyie").innerHTML;
+window.location.href = "https://twitter.com/intent/tweet?text=_"+cgy+"_"+amt+"_DATE_"+dtnw+"";
+}
+
+
+
+function mail() {
+var inc = document.getElementById("incamt").innerHTML;
+var cgydtli = document.getElementById("txcgyie").innerHTML;
+window.location.href = "mailto:hspanet@gmail.com?subject="+cgydtli+","+inc+"&body="+cgydtli+","+inc+"";
+}
+
+
 
 
 </script>
