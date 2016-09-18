@@ -102,7 +102,7 @@ function incsetdwn() {
 
 
 
-var month = new Array();var i = 0;month[0] = "google.com";month[1] = "etsy.com";month[2] = "amazon.com";month[3] = "costco.com";month[4] = "target.com";month[5] = "weather.gov";
+var month = new Array();var i = 0;month[0] = "google.com";month[1] = "etsy.com";month[2] = "amazon.com";month[3] = "homedepot.com";month[4] = "target.com";month[5] = "weather.gov";
 
 function inet() {
 document.getElementById("adlnk").innerHTML = month[i++%month.length];
@@ -149,7 +149,7 @@ window.location.href = "https://twitter.com/intent/tweet?text=_"+cgy+"_"+amt+"_D
 function mail() {
 var inc = document.getElementById("incamt").innerHTML;
 var cgydtli = document.getElementById("txcgyie").innerHTML;
-window.location.href = "mailto:hspanet@gmail.com?subject="+cgydtli+","+inc+"&body="+cgydtli+","+inc+"";
+window.location.href = "mailto:?subject="+cgydtli+","+inc+"&body="+cgydtli+","+inc+"";
 }
 
 
