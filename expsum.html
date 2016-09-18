@@ -1,5 +1,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><title>IEC</title>
 
+
+<style>
+body {
+background-color: black;
+color: cyan;
+}/* unvisited link */
+a:link {color: cyan;
+}
+
+/* visited link */
+a:visited {color: cyan;
+}
+
+/* mouse over link */
+a:hover {color: cyan;
+}
+
+/* selected link */
+a:active {color: cyan;
+}body {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;}
+</style>
+
+
+
+
 <script>
 function expstart() {
     window.location.assign("expwtch.html")
@@ -265,17 +290,17 @@ document.getElementById("txcgyexp").innerHTML = cgyexp[i++%cgyexp.length];
 </script>
 
 <body onload="rstamts(); rstexpamts(); expsum(); net(); netse(); netsetxbl(); netsetx(); incsum(); ">
-<button onclick="checlist()">EXP---&gt;</button>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="checlist()">EXP---&gt;</button>
 <span id="expamt">0</span><br><br><br>
-<p><button onclick="incexpamt()" type="button">( + )</button>&nbsp;&nbsp;&nbsp;
-<button onclick="incexpamtdwn()" type="button">( - )</button></p><br><br>
-<button onclick="ecgy()">CATEGORY</button>
+<p><button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="incexpamt()" type="button">( + )</button>&nbsp;&nbsp;&nbsp;
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="incexpamtdwn()" type="button">( - )</button></p><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="ecgy()">CATEGORY</button>
 <span id="txcgyexp"></span>
 <br><br><br>
-<button onclick="expsum(); incsum(); explog(); net(); mailbasic(); netse(); rld(); rstamts(); rstexpamts();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
-<button onclick="rstexpamts(); rld();">RST PG ENTRYs</button>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="expsum(); incsum(); explog(); net(); mailbasic(); netse(); rld(); rstamts(); rstexpamts();">SETSEND---&gt;</button>&nbsp;&nbsp;&nbsp;
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="rstexpamts(); rld();">RST PG ENTRYs</button>
 <br><br><br>
-<button onclick="mailnet()">SEND NETPL</button><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="mailnet()">SEND NETPL</button><br><br>
 INCTTL<br>
 <span id="incttl"></span><br>
 EXPTTL<br>
@@ -288,5 +313,5 @@ NETSE Txbl<br>
 <span id="netsetxbl"></span><br>
 NETSE Tax<br>
 <span id="netsetx"></span><br><br>
-<button onclick="reset(); rld();">RST ALL AMTs</button>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="reset(); rld();">RST ALL AMTs</button>
 </body></html>
