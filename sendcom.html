@@ -2,13 +2,15 @@
 <br><br>
 
 <span id="txcgy1"></span><span id="txcgy2"></span><span id="txcgy3"></span>
+<br><br><br>
 
+<button onclick="cgy1()">POS1</button>
 <script>
 
- var cgyinc = new Array();var i = 0;cgyinc[0] = "01 Gross receipts or sales";cgyinc[1] = "02 Returns and allowances(entr as - nbr)";cgyinc[2] = "04 Cost of goods sold(entr as - nbr)";cgyinc[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";
+ var cgyone = new Array();var i = 0;cgyone[0] = "0";cgyone[1] = "1";cgyone[2] = "2";cgyinc[3] = "3";
  
- function icgy(){
-document.getElementById("txcgy1").innerHTML = cgyinc[i++%cgyinc.length];
+ function cgy1(){
+document.getElementById("txcgy1").innerHTML = cgyone[i++%cgyone.length];
 }
 
  var cgyinc = new Array();var i = 0;cgyinc[0] = "01 Gross receipts or sales";cgyinc[1] = "02 Returns and allowances(entr as - nbr)";cgyinc[2] = "04 Cost of goods sold(entr as - nbr)";cgyinc[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";
