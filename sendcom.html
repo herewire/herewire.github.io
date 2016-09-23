@@ -6,7 +6,7 @@
 
 <button onclick="cgy1()">POS1</button><br><br>
 <button onclick="cgy2()">POS2</button><br><br>
-<button onclick="cby3()">POS3</button><br><br>
+<button onclick="cgy3()">POS3</button><br><br>
 <script>
 
  var cgyone = new Array();var i = 0;cgyone[0] = "0";cgyone[1] = "1";cgyone[2] = "2";cgyone[3] = "3";
@@ -16,10 +16,16 @@ document.getElementById("txcgy1").innerHTML = cgyone[i++%cgyone.length];
 }
 
 
- var cgytwo = new Array();var i = 0;cgytwo[0] = "0";cgytwo[1] = "1";cgytwo[2] = "2";cgytwo[3] = "3";
+ var cgytwo = new Array();var i = 0;cgytwo[0] = "0";cgytwo[1] = "1";cgytwo[2] = "2";cgytwo[3] = "3";cgytwo[4] = " ";cgytwo[5] = "4";
  
  function cgy2(){
 document.getElementById("txcgy2").innerHTML = cgytwo[i++%cgytwo.length];
+}
+
+ var cgythree = new Array();var i = 0;cgythree[0] = "0";cgythree[1] = "1";cgythree[2] = "2";cgythree[3] = "3";cgythree[4] = " ";cgythree[5] = "4";
+ 
+ function cgy3(){
+document.getElementById("txcgy3").innerHTML = cgythree[i++%cgythree.length];
 }
 
 
@@ -28,5 +34,18 @@ document.getElementById("txcgy2").innerHTML = cgytwo[i++%cgytwo.length];
  function icgy(){
 document.getElementById("txcgy3").innerHTML = cgyinc[i++%cgyinc.length];
 }
+
+
+
+function mail() {
+var cgy1 = document.getElementById("txcgy1").innerHTML;
+var cgy2 = document.getElementById("txcgy2").innerHTML;
+var cgy3 = document.getElementById("txcgy3").innerHTML;
+window.location.href = "mailto:i@i.i?subject="+cgy1++cgy2++cgy3"&body="msgtxt"";
+}
+
+
+
+
 
 </script>
