@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><title>SendComm</title>
 <br><br>
 
-<span id="txcgy1"></span><span id="txcgy2"></span><span id="txcgy3"></span>&nbsp;&nbsp;&nbsp;<button onclick="mail()">SND</button>&nbsp;&nbsp;&nbsp;<button onclick="msg()"></button>
+<span id="txcgy1"></span><span id="txcgy2"></span><span id="txcgy3"></span>&nbsp;&nbsp;&nbsp;<button onclick="mail()">SND</button>&nbsp;&nbsp;&nbsp;<button onclick="msg()">MSG</button>
 <br><br><br>
 
 <button onclick="cgy1()">POS1</button><br><br>
@@ -49,7 +49,7 @@ function msg() {
 var cgy1 = document.getElementById("txcgy1").innerHTML;
 var cgy2 = document.getElementById("txcgy2").innerHTML;
 var cgy3 = document.getElementById("txcgy3").innerHTML;
-var msgone = "?now="
+var msgone = "?now=";
 window.location.href"+msgone+""+cgy1+""+cgy2+""+cgy3+";
 }
 
