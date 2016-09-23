@@ -1,0 +1,27 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><title>SendComm</title>
+<br><br>
+
+<span id="txcgy1"></span><span id="txcgy2"></span><span id="txcgy3"></span>
+
+<script>
+
+ var cgyinc = new Array();var i = 0;cgyinc[0] = "01 Gross receipts or sales";cgyinc[1] = "02 Returns and allowances(entr as - nbr)";cgyinc[2] = "04 Cost of goods sold(entr as - nbr)";cgyinc[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";
+ 
+ function icgy(){
+document.getElementById("txcgy1").innerHTML = cgyinc[i++%cgyinc.length];
+}
+
+ var cgyinc = new Array();var i = 0;cgyinc[0] = "01 Gross receipts or sales";cgyinc[1] = "02 Returns and allowances(entr as - nbr)";cgyinc[2] = "04 Cost of goods sold(entr as - nbr)";cgyinc[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";
+ 
+ function icgy(){
+document.getElementById("txcgy2").innerHTML = cgyinc[i++%cgyinc.length];
+}
+
+
+ var cgyinc = new Array();var i = 0;cgyinc[0] = "01 Gross receipts or sales";cgyinc[1] = "02 Returns and allowances(entr as - nbr)";cgyinc[2] = "04 Cost of goods sold(entr as - nbr)";cgyinc[3] = "06 Other income including federal and state gasoline or fuel tax credit or refund";
+ 
+ function icgy(){
+document.getElementById("txcgy3").innerHTML = cgyinc[i++%cgyinc.length];
+}
+
+</script>
