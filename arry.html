@@ -149,7 +149,8 @@ window.location.href = "https://twitter.com/intent/tweet?text="+cgy+"~"+amt+"~DA
 function mail() {
 var inc = document.getElementById("incamt").innerHTML;
 var cgydtli = document.getElementById("txcgyie").innerHTML;
-window.location.href = "mailto:i@i.i?subject="+cgydtli+","+inc+"&body="+cgydtli+","+inc+"";
+var emldtnw = Date.now();
+window.location.href = "mailto:i@i.i?subject="+cgydtli+","+inc+",DATE"+emldtnw+"&body="+cgydtli+","+inc+",DATE"+emldtnw+"";
 }
 
 
