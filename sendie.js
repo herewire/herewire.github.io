@@ -1,4 +1,3 @@
-
 function rld() {
     location.reload();
 }
