@@ -1,0 +1,49 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" /><title>SendIE</title>
+
+
+<style>
+body {
+background-color: black;
+color: cyan;
+}/* unvisited link */
+a:link {color: cyan;
+}
+
+/* visited link */
+a:visited {color: cyan;
+}
+
+/* mouse over link */
+a:hover {color: cyan;
+}
+
+/* selected link */
+a:active {color: cyan;
+}body {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;}
+</style>
+
+
+
+
+<body>
+<br>
+Amt=<span id="incamt">0</span><br><br>
+<p><button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="incsetup()">( + )</button>&nbsp;&nbsp;&nbsp;<br><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="incsetdwn()">( - )</button></p><br>
+<br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="iecgy()">CATEGORY</button>
+<span id="txcgyie"></span>
+<br><br><br><br>
+
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="mail()">EMAIL---&gt;</button>&nbsp;&nbsp;&nbsp;<br><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="mailamttwt()">TWT---&gt;</button>&nbsp;&nbsp;&nbsp;<br><br><br>
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="reset(); rld();">RST PG ENTRYs</button>
+
+
+
+
+<br><br><br><br><br><br>
+
+<button style="border-style: solid; border-width: 1px;border-color:cyan;background: black;color:cyan;" onclick="inet()">ADs</button>
+<br><br><br><br>
+<a id="adlnk" href="adlnk"></a>
