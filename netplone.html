@@ -401,7 +401,7 @@ var expsum = localStorage.expsum;
 var netpl = localStorage.net;
 var inc = document.getElementById("incamt").innerHTML;
 var cgydtli = document.getElementById("txcgy").innerHTML;
-window.location.href = "mailto:hspanet@gmail.com?subject=INC,"+cgydtli+","+inc+"&body=INC,"+cgydtli+","+inc+"";
+window.location.href = "mailto:?subject=INC,"+cgydtli+","+inc+"&body=INC,"+cgydtli+","+inc+"";
 }
 
 function maile() {
@@ -413,7 +413,7 @@ var expsum = localStorage.expsum;
 var netpl = localStorage.net;
 var exp = document.getElementById("expamt").innerHTML;
 var cgydtle = document.getElementById("txcgyexp").innerHTML;
-window.location.href = "mailto:hspanet@gmail.com?subject=EXP,"+cgydtle+","+exp+"&body=EXP,"+cgydtle+","+exp+"";
+window.location.href = "mailto:?subject=EXP,"+cgydtle+","+exp+"&body=EXP,"+cgydtle+","+exp+"";
 }
 
 
@@ -425,7 +425,7 @@ var incsum = localStorage.incsum;
 var expsum = localStorage.expsum;
 var netpl = localStorage.net;
 var cgydtl = document.getElementById("txcgy").innerHTML;
-window.location.href = "mailto:hspanet@gmail.com?subject=INC,"+cgydtl+","+ttli+"&body=INC,"+cgydtl+","+ttli+", INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
+window.location.href = "mailto:?subject=INC,"+cgydtl+","+ttli+"&body=INC,"+cgydtl+","+ttli+", INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
 }
 
 function mailexp() {
@@ -436,7 +436,7 @@ var incsum = localStorage.incsum;
 var expsum = localStorage.expsum;
 var netpl = localStorage.net;
 var cgydtl = document.getElementById("txcgyexp").innerHTML;
-window.location.href = "mailto:hspanet@gmail.com?subject=EXP,"+cgydtl+","+ttle+"&body=EXP,"+cgydtl+","+ttle+", INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
+window.location.href = "mailto:?subject=EXP,"+cgydtl+","+ttle+"&body=EXP,"+cgydtl+","+ttle+", INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"";
 }
 
 
@@ -444,7 +444,7 @@ function mailnet() {
 var incsum = localStorage.incsum;
 var expsum = localStorage.expsum;
 var netpl = localStorage.net;
-window.location.href = "mailto:hspanet@gmail.com?subject=NETPL, INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"&body=INCTTL="+incsum+"%0D%0AEXPTTL="+expsum+"%0D%0ANETPL="+netpl+"";
+window.location.href = "mailto:?subject=NETPL, INCTTL="+incsum+", EXPTTL="+expsum+", NETPL="+netpl+"&body=INCTTL="+incsum+"%0D%0AEXPTTL="+expsum+"%0D%0ANETPL="+netpl+"";
 }
 
 
